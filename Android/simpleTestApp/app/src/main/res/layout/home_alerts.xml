@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/round_shade"
+    android:orientation="vertical"
+    android:paddingBottom="11dp"
+    android:paddingTop="0dp">
+
+    <include
+        android:id="@+id/eau"
+        layout="@layout/dlb_eau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+    <include
+        android:id="@+id/meteo"
+        layout="@layout/dlb_meteo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/feu"
+        layout="@layout/dlb_feu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/terrain"
+        layout="@layout/dlb_terrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="js/controller.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="greeting">
+    <div class="jumbotron"  ng-controller="greetingController">
+        <div style="color:red" ng-bind="personne.id"></div>
+        <div style="color:green" ng-bind="personne.content"></div>
+        <div class="display-4" ng-bind="personne.annee"></div>
+        <form>
+            <input ng-model="user.name" class="form-control" />
+            <input ng-model="user.annee" class="form-control" />
+            <input type="submit" ng-click="update(user)" value="Save" />
+        </form>
+    </div>
+</body>
+</html>

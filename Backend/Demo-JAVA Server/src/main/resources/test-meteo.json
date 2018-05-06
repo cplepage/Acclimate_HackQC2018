@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "masas_naad_adna_s_public",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32198" } },
+"features": [
+
+]
+}

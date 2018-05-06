@@ -1,0 +1,258 @@
+$primaryColor: #d51c29
+$mediumColor: #b72533
+$darkColor: #9b1e31
+
+$gray: #efecec
+
+$black: #5c5d60
+
+$expanderColor: white
+
+$font-stack: 'Lato', sans-serif
+
+body, html
+    font-family: $font-stack
+
+h1, h2, h3, h4
+    font-weight: lighter
+
+.navbar, #logo, #search
+    transition: 0.5s all
+
+.navbar
+    background: linear-gradient(to right, $primaryColor, $mediumColor , $darkColor)
+    position: relative
+    z-index: 999999
+    height: 101px
+
+.navbar.land
+    height: 100vh
+
+#logo
+    position: absolute
+    top: 12px
+    left: 18px
+
+#logo.land
+    height: 30vh
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+.dl
+    color: white
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    top: 80vh
+    letter-spacing: 0.3px
+    font-weight: lighter
+    hr
+        border: 0.5px solid #bf5961
+
+.ol-zoom
+    left: auto!important
+    right: .5em
+
+#map
+    height: calc(100vh - 101px)
+    z-index: -3
+    position: absolute
+    width: 100vw
+    right: 0
+
+#leftPane
+    height: calc(100% - 101px)
+    position: absolute
+    top: 101px
+    background-color: $expanderColor
+    width: 280px
+    left: 0
+    padding: 0px 5px 0px 10px
+    transition: 0.3s all
+    .inner
+        height: 100%
+        overflow-y: scroll
+        padding: 15px 0
+    #expander
+        background-color: $expanderColor
+        height: 50px
+        width: 50px
+        z-index: -2
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translate(50%, -50%)
+        border-radius: 50%
+        &:hover
+            cursor: pointer
+        img
+            height: 30px
+            position: absolute
+            top: 50%
+            transform: translateY(-50%) rotate(180deg)
+            right: 3px
+            transition: 0.3s all
+    #expander.rotate
+        img
+            transform: translateY(-50%) rotate(0deg)
+    ul
+        list-style-type: none
+        padding: 0
+        position: relative
+        z-index: 9999
+        li
+            padding: 0 0 6px 0
+            span
+                padding: 0 0 0 15px
+        img
+            height: 25px
+        .selector
+            height: 24px
+            width: 24px
+            border: 2px solid $black
+            border-radius: 4px
+            display: inline-block
+            transform: translateY(25%)
+            &:hover
+                cursor: pointer
+        .selector.checked
+            background-color: $black
+            &::after
+                content: ""
+                background-image: url('../images/checkmark.svg')
+                background-size: 18px
+                background-repeat: no-repeat
+                background-position: center
+                display: inline-block
+                width: 24px
+                height: 24px
+                position: absolute
+                top: -2px
+                left: -2px
+        .date
+            display: inline-block
+            float: right
+            padding: 7px
+            border-top-left-radius: 4px
+            border-top-right-radius: 4px
+            background-color: rgba(239, 236, 236, 0)
+            transition: 0.3s all
+            &:hover
+                cursor: pointer
+            &::after
+                content: ""
+                background-image: url('../images/datepicker.svg')
+                background-size: 20px
+                background-repeat: no-repeat
+                background-position: center
+                display: inline-block
+                width: 24px
+                height: 24px
+        .date.active
+            background-color: rgba(239, 236, 236, 1)
+        .datePickers
+            background-color: $gray
+            padding: 5px 12px
+            border-top-left-radius: 4px
+            border-bottom-left-radius: 4px
+            border-bottom-right-radius: 4px
+            font-size: 0.8em
+            text-align: center
+            margin-top: 6px
+            height: 0
+            overflow: hidden
+            opacity: 0
+            width: 100%
+            transition: 0.3s all
+            .prepend
+                border-top-left-radius: 4px
+                border-bottom-left-radius: 4px
+                text-align: center
+                box-sizing: border-box
+                width: 32px
+                display: inline-block
+                background-color: $gray
+                padding-top: 5px
+                padding-bottom: 3px
+                position: relative
+                border-top: 1px solid $black
+                border-left: 1px solid $black
+                border-bottom: 1px solid $black
+                top: 1px
+            input
+                border-top-right-radius: 4px
+                border-bottom-right-radius: 4px
+                margin: 5px 0
+                padding-top: 3px
+                padding-bottom: 3px
+                border: 1px solid $black
+                margin-left: -3px
+        .datePickers.active
+            opacity: 1
+            height: 124px
+
+
+
+
+
+#leftPane.close
+    opacity: 1
+    left: -280px
+
+form
+    display: inline
+
+#search
+    opacity: 1
+    &:hover
+        cursor: pointer
+
+#search.land
+    opacity: 0
+
+#searchForm
+    background: none
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 2px solid white
+    padding: 5px 15px
+    outline: 0
+    color: white
+    width: 0px
+    opacity: 0
+    transition: 0.3s all
+
+#searchForm.visible
+    opacity: 1
+    width: 250px
+
+.arrow_box
+    position: relative
+    background: #efecec
+    padding: 15px
+    border: 2px solid #a7a9ac
+    border-radius: 4px
+    max-width: 400px
+
+.arrow_box:after, .arrow_box:before
+    top: 100%
+    left: 50%
+    border: solid transparent
+    content: " "
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+
+
+.arrow_box:after
+    border-top-color: #efecec
+    border-width: 15px
+    margin-left: -15px
+
+.arrow_box:before
+    border-top-color: #a7a9ac
+    border-width: 19px
+    margin-left: -19px

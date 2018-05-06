@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="Acclimate">
+<head>
+<title>Acclimate</title>
+<link rel="icon"
+      type="image/png"
+      href="/images/favicon.png">
+
+<!-- Bootstrap & Jquery -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<!-- OpenLayer & OpenStreetMap -->
+<link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+<!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+<script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<!-- Angular Service & Controller -->
+<script src="js/angular/controller.js"></script>
+<script src="js/angular/services.js"></script>
+<script src="js/angular/main.js"></script>
+
+<!-- Lato Font -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+<!-- style -->
+<link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<body ng-controller="mainController">
+    <nav class="navbar land">
+        <a class="navbar-brand" href="">
+            <img id="logo" class="land" src="images/logo.svg" height="75">
+            <span ng-bind="title"></span>
+        </a>
+        <div class="row">
+            <div class="col-12 text-right">
+                <form ng-submit="search()"><input id="searchForm" type="text" ng-model="searchForm" placeholder="search" autocomplete="off"></form>
+                <a id="search" class="land"><img src="images/search.svg" height="35"></a>
+                <script src="js/showInput.js"></script>
+            </div>
+        </div>
+        <div class="dl"><hr> Téléchargez l'application <hr></div>
+    </nav>
+    <div id="map" class="map"></div>
+    <div class="arrow_box" id="popup-container"></div>
+    <script src="js/openlayerInit.js"></script>
+    <div id="leftPane">
+        <div id="expander"><img src="images/expand.svg"></div>
+        <div class="inner">
+        <h3>Flux en direct</h3>
+            <ul>
+                <li ng-repeat="risque in risques">
+                    <div class="selector" ng-click="showHideRisque($index, 'risques')" ng-class="(risque.show) ? 'checked':''"></div>
+                    <span ng-bind="risque.title"></span>
+                    <img ng-src="images/{{risque.icon}}" />
+                    <div style="display:none" onclick="showDatepicker($(this));" class="date"></div>
+                    <div class="datePickers">
+                        <div class="text-left">&Eacute;cart de dates</div>
+                        <form>
+                            <div class="prepend">De:</div>
+                            <input type="date"><br>
+                            <div class="prepend">&Agrave; :</div>
+                            <input type="date">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+            <h3>Alertes d&apos;usagers</h3>
+            <ul>
+                <li ng-repeat="userPin in userPins">
+                    <div class="selector" ng-click="showHideRisque($index, 'userPins')" ng-class="(userPin.show) ? 'checked':''"></div>
+                    <span ng-bind="userPin.title"></span>
+                    <img ng-src="images/{{userPin.icon}}" />
+                    <div style="display:none" onclick="showDatepicker($(this));" class="date"></div>
+                    <div class="datePickers">
+                        <div class="text-left">&Eacute;cart de dates</div>
+                        <form>
+                            <div class="prepend">De:</div>
+                            <input type="date"><br>
+                            <div class="prepend">&Agrave; :</div>
+                            <input type="date">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+            <h3>Historique</h3>
+            <ul>
+                <li ng-repeat="histo in histos">
+                    <div class="selector" ng-click="showHideRisque($index, 'histos')" ng-class="(histo.show) ? 'checked':''"></div>
+                    <span ng-bind="histo.title"></span>
+                    <img ng-src="images/{{histo.icon}}" />
+                    <div onclick="showDatepicker($(this));" class="date"></div>
+                    <div class="datePickers">
+                        <div class="text-left">&Eacute;cart de dates</div>
+                        <form>
+                            <div class="prepend">De:</div>
+                            <input type="date"><br>
+                            <div class="prepend">&Agrave; :</div>
+                            <input type="date">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/showDatePicker.js"></script>
+    <script src="js/toggleLeftPane.js"></script>
+    <script src="js/land.js"></script>
+</body>
+</html>

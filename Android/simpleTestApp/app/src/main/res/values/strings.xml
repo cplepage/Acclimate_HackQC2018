@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">simpleTestApp</string>
+
+
+    <string name="logo">logo</string>
+    <string name="action_search">Search</string>
+    <string name="profileBtn">Profile</string>
+
+
+    <!-- DEPRECATED
+    <string name="action_settings">Settings</string>
+    <string name="posBtn">posBtn</string>
+    <string name="centerBtn">centerBtn</string>
+    <string name="removeAll">removeAll</string>
+    <string name="addUserPin">addUserPin</string>
+    <string name="circleBtn">circleBtn</string>
+    -->
+
+    <string name="highlight">Bound Request</string>
+    <string name="maj">Mise à jour</string>
+    <string name="add">Surveiller zone</string>
+
+    <string name="cB_fire">Feux</string>
+    <string name="cB_water">Inondations</string>
+    <string name="cB_terrain">Terrain</string>
+    <string name="cB_meteo">Meteo</string>
+    <string name="cB_zones">Afficher zones</string>
+    <string name="cB_histo">Historique</string>
+    <string name="cB_users">Alertes d\'usagers</string>
+
+
+    <string name="warning">Ajouter une alerte de \nquel type au serveur ?</string>
+    <string name="feu">Feu</string>
+    <string name="eau">Eau</string>
+    <string name="vent">Météo</string>
+    <string name="seisme">Terrain</string>
+    <string name="cancel">Annuler</string>
+
+</resources>

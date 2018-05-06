@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/home_gradient"
+    android:orientation="vertical"
+    tools:context=".Home">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        app:srcCompat="@drawable/logo_blanc" />
+
+    <include
+        android:id="@+id/home_alerts"
+        layout="@layout/home_alerts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp" />
+
+    <ImageButton
+        android:id="@+id/proceed"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:fadingEdge="none"
+        android:visibility="visible"
+        app:srcCompat="@drawable/icon_map" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Entrer"
+        android:textColor="@color/number_features_tile_text_color"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

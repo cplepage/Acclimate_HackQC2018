@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GeoJSON</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v4.6.5/build/ol.js"></script>
+</head>
+<body>
+    <div id="map" class="map"></div>
+    <script>
+    var image = new ol.style.Circle({
+        radius: 5,
+        fill: new ol.style.Fill({color: 'rgba(255,0,0, 0.2)'}),
+        stroke: new ol.style.Stroke({color: 'red', width: 1})
+    });
+
+    var styles = {
+        'Point': new ol.style.Style({
+            image: image
+        })
+    };
+
+    var styleFunction = function(feature) {
+        return styles[feature.getGeometry().getType()];
+    };
+
+
+    var vectorLayer = new ol.layer.Vector({
+        title: 'inondation23avril2017',
+        source: new ol.source.Vector({
+            format: new ol.format.GeoJSON(),
+            url: 'resultat.json'
+        }),
+        style: styleFunction
+    });
+
+    var map = new ol.Map({
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            }),
+            vectorLayer
+        ],
+        target: 'map',
+        controls: ol.control.defaults({
+            attributionOptions: {
+                collapsible: false
+            }
+        }),
+        view: new ol.View({
+            center: ol.proj.transform([-73.656830, 45.516136], 'EPSG:4326', 'EPSG:3857'),
+            projection: 'EPSG:3857',
+            zoom: 9
+        })
+    });
+    </script>
+</body>
+</html>

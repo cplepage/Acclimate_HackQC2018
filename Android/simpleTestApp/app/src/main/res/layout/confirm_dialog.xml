@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/round_shade"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="10dp">
+
+    <!--
+    MarkerInfoWindow is the default implementation of InfoWindow for a Marker.
+    It handles R.id.bubble_title = OverlayWithIW.getTitle(),
+    R.id.bubble_subdescription = OverlayWithIW.getSubDescription(),
+    R.id.bubble_description = OverlayWithIW.getSnippet(),
+    R.id.bubble_image = Marker.getImage()
+    -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Confirmer"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="47dp"
+        android:text="l'alerte"
+        android:textSize="36sp" />
+
+    <include
+        android:id="@+id/input_btns"
+        layout="@layout/input_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/test_button_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="false"
+        android:layout_centerVertical="false"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/icon_feu" />
+
+    <TextView
+        android:id="@+id/dlb_feuMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_alignTop="@+id/test_button_image"
+        android:layout_toRightOf="@+id/test_button_image"
+        android:text="Relative layout" />
+    <TextView
+        android:id="@+id/dlb_feuSec"
+        android:layout_width="wrap_content"
+        android:text="Compound button"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dlb_feuMain"
+        android:layout_alignLeft="@+id/dlb_feuMain" />
+
+    <Button
+        android:id="@+id/dlb_feu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:visibility="visible" />
+
+</RelativeLayout>
