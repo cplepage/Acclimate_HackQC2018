@@ -25,7 +25,9 @@ Auteurs
 
  * [CARTE DE VIGILANCE MULTIRISQUE-AVERTISSEMENTS ET ALERTES D'ENVIRONNEMENT ET CHANGEMENT CLIMATIQUE CANADA](https://www.donneesquebec.ca/recherche/fr/dataset/carte-vigilance-multirisque-meteo-alerte-ec)
  * [CARTE DE VIGILANCE MULTIRISQUE - FIL DE SITUATION RSS (POINTS)](https://www.donneesquebec.ca/recherche/fr/dataset/carte-vigilance-multirisque-meteo-alerte-ec)
- * [HISTORIQUE DES ÉVÉNEMENTS DE SÉCURITÉ CIVILE - ARCHIVES](https://www.donneesquebec.ca/recherche/fr/dataset/observations-terrain-historiques-devenements-archives) - Suite à un traitement de données pour ne conserver que ce qui concernait notre projet.
+ * [HISTORIQUE DES ÉVÉNEMENTS DE SÉCURITÉ CIVILE - ARCHIVES](https://www.donneesquebec.ca/recherche/fr/dataset/observations-terrain-historiques-devenements-archives)
+ 
+ Suite à un traitement de données pour ne conserver que ce qui concernait notre projet.
 
 ### Version Mobile et WebApp
 
