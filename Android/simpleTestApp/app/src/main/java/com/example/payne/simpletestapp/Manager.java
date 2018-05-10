@@ -164,7 +164,7 @@ public class Manager {
     private void generatePins(JSONObject serverPins, JSONObject userPins, JSONObject histoPins){
 
         try {
-            myMap.updateLists(serverPins, userPins, histoPins);
+            myMap.updateLists(serverPins, userPins/*, histoPins*/);
         } catch (Exception e){
             Log.w("PIN", "could not load new icons");
         }

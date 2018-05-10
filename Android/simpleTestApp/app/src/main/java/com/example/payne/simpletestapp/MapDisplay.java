@@ -269,11 +269,11 @@ public class MapDisplay {
      * @param histoPins
      * @throws Exception
      */
-    public void updateLists(JSONObject serverPins, JSONObject userPins, JSONObject histoPins) throws Exception {
+    public void updateLists(JSONObject serverPins, JSONObject userPins/*, JSONObject histoPins*/) throws Exception {
 
         JSONArray allServerAlerts = serverPins.getJSONArray("alertes");
         JSONArray allUserAlerts = userPins.getJSONArray("alertes");
-        JSONArray allHistoAlerts = histoPins.getJSONArray("alertes");
+//        JSONArray allHistoAlerts = histoPins.getJSONArray("alertes");
 
         for (int i = 0; i < allServerAlerts.length(); i++) {
 
@@ -346,23 +346,23 @@ public class MapDisplay {
         }
 
 
-        for (int i = 0; i < allHistoAlerts.length(); i++){
-
-            JSONObject histoAlert = allHistoAlerts.getJSONObject(i).getJSONObject("alerte");
-
-            Drawable currentIcon;
-
-            switch (histoAlert.getString("type")){
-                case "Eau" : currentIcon = eauIcon; break;
-                case "Feu" : currentIcon = feuIcon; break;
-                case "Meteo" : currentIcon = meteoIcon; break;
-                case "Terrain" : currentIcon = terrainIcon; break;
-                default: currentIcon = meteoIcon;
-            }
-
-            this.userPins.add(createAlertPin(new Alerte(histoAlert), currentIcon));
-
-        }
+//        for (int i = 0; i < allHistoAlerts.length(); i++){
+//
+//            JSONObject histoAlert = allHistoAlerts.getJSONObject(i).getJSONObject("alerte");
+//
+//            Drawable currentIcon;
+//
+//            switch (histoAlert.getString("type")){
+//                case "Eau" : currentIcon = eauIcon; break;
+//                case "Feu" : currentIcon = feuIcon; break;
+//                case "Meteo" : currentIcon = meteoIcon; break;
+//                case "Terrain" : currentIcon = terrainIcon; break;
+//                default: currentIcon = meteoIcon;
+//            }
+//
+//            this.userPins.add(createAlertPin(new Alerte(histoAlert), currentIcon));
+//
+//        }
 
         this.map.invalidate();
 
@@ -388,11 +388,11 @@ public class MapDisplay {
             }
         }
 
-        if (historiqueFilter) {
-            for (Marker h : userPins) {
-                map.getOverlayManager().add(h);
-            }
-        }
+//        if (historiqueFilter) {
+//            for (Marker h : userPins) {
+//                map.getOverlayManager().add(h);
+//            }
+//        }
 
         this.map.invalidate();
 
